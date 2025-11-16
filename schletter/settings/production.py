@@ -21,6 +21,9 @@ try:
 except ImportError:
     pass
 
+STATICFILES_DIRS = [
+    os.path.join('app', 'static'),
+]
 
 COMPRESS_OFFLINE = True
 COMPRESS_CSS_FILTERS = [

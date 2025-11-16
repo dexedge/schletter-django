@@ -10,6 +10,7 @@
 .env
 
 # Project
+.gitignore
 datadump.json
 dumpfile
 latest.dump
@@ -71,10 +72,6 @@ nosetests.xml
 coverage.xml 
 *.cover 
 .hypothesis/ 
-
-
-# pyenv 
-.python-version 
 
 # celery 
 celerybeat-schedule.* 

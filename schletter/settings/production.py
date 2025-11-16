@@ -22,7 +22,7 @@ except ImportError:
     pass
 
 STATICFILES_DIRS = [
-    os.path.join('/app', 'static'),
+    os.path.join(BASE_DIR, 'static'),
 ]
 
 COMPRESS_OFFLINE = True

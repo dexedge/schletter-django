@@ -11,15 +11,12 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 import os
-from pathlib import Path
 from dotenv import load_dotenv
 load_dotenv()
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-BASE_DIR = PROJECT_DIR
-
-print(BASE_DIR)
+BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 
 DEFAULT_AUTO_FIELD='django.db.models.AutoField'

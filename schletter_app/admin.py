@@ -2,7 +2,6 @@ from typing import Any
 from django.contrib import admin
 from django.db.models import Count
 
-# Register your models here.
 from .models import About, Date, Event, WorkEvent, Work, Author, AuthorWork, Composer, ComposerWork
 from adminsortable2.admin import SortableAdminMixin
 
@@ -51,7 +50,12 @@ admin.site.register(ComposerWork)
 
 @admin.register(Event)
 class SortableEventAdmin(SortableAdminMixin, admin.ModelAdmin):
-   list_display = ('date', 'title', 'theater', 'company')
-   list_filter = ('theater', 'company')
+   list_display = ('date', 'title', 'theater', 'company', 'genre')
+   list_filter = ('theater', 'company', 'work__genre')
    search_fields = ('title',)
+
+   def genre(self, obj):
+       return obj.work_set.first().genre
+   
+   genre.description = 'Genre'
 
